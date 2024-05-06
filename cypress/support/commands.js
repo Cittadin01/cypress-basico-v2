@@ -1,9 +1,11 @@
-Cypress.Commands.add('fillMandatoryFieldsAndSubmit', function(){
-    
-    cy.get('#firstName').type('Walmyr')
-    cy.get('#lastName').type('Filho')
-    cy.get('#email').type('walmyr@exemplo.com')
+Cypress.Commands.add('fillall', function(){
+    const longText = 'TESTETESTETESTETESTE, TESTETESTETESTETESTE, TESTETESTETESTETESTE, TESTETESTETESTETESTE, TESTETESTETESTETESTE'
+
+    cy.get('#firstName').type('Lebron')
+    cy.get('#lastName').type('James')
+    cy.get('#email').type('papailebron@exemplo.com')
+    cy.get('#phone').type('123456789')
     cy.get('#phone-checkbox').click()
-    cy.get('#open-text-area').type(longText, {delay: 1})
-    cy.get('button', 'Enviar').click()
+    cy.get('#open-text-area').type(longText, {delay: 0})
+    cy.get('button[type="submit"]').click()
 })
